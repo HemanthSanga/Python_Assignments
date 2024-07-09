@@ -1,7 +1,8 @@
 from datetime import datetime
 
+"""Generating a Meetings Organizer to create and organize possible number of meetings between two people with respect to their working calenders"""
 
-my_calender_list = [] # Initializing an empty list to store the your calender data input
+my_calender_list = [] # Initializing an empty list to store the calender data input
 
 while True:
     #first value
@@ -73,7 +74,7 @@ latest_time_str = latest_time.strftime(time_format)
 # Creating the third list with only the earliest and latest time values
 common_workingHrs_List = [earliest_time_str, latest_time_str]
 
-print("Your common starting and ending working hours are: ", common_workingHrs_List)
+print("\nYour common starting and ending working hours are: ", common_workingHrs_List)
 
 
 #inputing Meeting Duration time period
@@ -162,6 +163,7 @@ free_30_min_intervals = get_free_30_min_intervals(my_calender_list, coWorker_cal
 interval = (free_30_min_intervals)
 print("\n\n")
 print("The possible meeting timings are as follows: ", interval)
+print("Number of these meetings are: ",len(free_30_min_intervals))
 
 
 
