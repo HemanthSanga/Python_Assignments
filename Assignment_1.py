@@ -18,7 +18,7 @@ while True:
 
 
 coWorker_calender_list = [] # Initializing an empty list to store the co-worker's calender data input
-
+print("\n")
 while True:
   
     #first value
@@ -36,11 +36,11 @@ while True:
 
 
 my_workingHrs_List = []
-my_work_first_value = input("Enter your Working hours Start Time in HH:MM format: ") #first value
+my_work_first_value = input("\n\nEnter your Working hours Start Time in HH:MM format: ") #first value
 my_work_second_value = input("Enter your Working hours End Time in HH:MM format: ") #second value
 my_workingHrs_List.append(my_work_first_value) #appending two arguments individually 
 my_workingHrs_List.append(my_work_second_value)
-
+print("\n")
 coWorker_workingHrs_List = []
 coWorker_work_first_value = input("Enter Co-Worker's Working hours Start Time in HH:MM format: ") #first value
 coWorker_work_second_value = input("Enter Co-Worker's Working hours End Time in HH:MM format: ") #second value
@@ -49,10 +49,11 @@ coWorker_workingHrs_List.append(coWorker_work_second_value)
 
 
 #printing all the lists which are stored from the input dataset
+print("\n\n")
 print("Your Calender list is:", my_calender_list)
 print("Your Co-worker's Calender list is:", coWorker_calender_list)
-print("YourWorkingHours are: ", my_workingHrs_List)
-print("Your Co_Worker's working hours are: ", coWorker_workingHrs_List)
+print("YourWorkingHours are from: ", my_workingHrs_List)
+print("Your Co_Worker's working hours are from: ", coWorker_workingHrs_List)
 
 # Converting the time values from strings to datetime objects
 time_format = "%H:%M"
@@ -76,7 +77,8 @@ print("Your common starting and ending working hours are: ", common_workingHrs_L
 
 
 #inputing Meeting Duration time period
-meeting_duration = int(input("Enter your desired meeting duration in MM format: "))
+print("\n")
+meeting_duration = int(input("Now enter your desired meeting duration in MM format: "))
 print("Meeting Duration you entered is: ", meeting_duration) #printing the Meeting duration
 
 
@@ -101,7 +103,7 @@ def merge_intervals(intervals):
             merged[-1] = (merged[-1][0], max(merged[-1][1], current[1]))
     return merged
 
-#---------------------------------------------------------------------------------
+
 def time_to_minutes(time_str):
     """Convert input common start and end time to minutes"""
     # Spliting the time string into hours and minutes
@@ -110,16 +112,15 @@ def time_to_minutes(time_str):
     total_minutes = hours * 60 + minutes
     return total_minutes
 
-earliest_time_str
-start_minutes = time_to_minutes(earliest_time_str)
-print(f"Time {earliest_time_str} in minutes is: {start_minutes}")
-latest_time_str
-end_minutes = time_to_minutes(latest_time_str)
-print(f"Time {latest_time_str} in minutes is: {end_minutes}")
+
+start_minutes = time_to_minutes(earliest_time_str) # Converting found earliset start time from string format to int format
+
+end_minutes = time_to_minutes(latest_time_str)  # Converting found earliset end time from string format to int format
+
 
 
 def find_free_intervals(merged_intervals, start_minutes, end_minutes):
-    """Find free intervals in a day given merged busy intervals."""
+    """Finding free intervals in a day given merged busy intervals."""
     free_intervals = []
     if merged_intervals[0][0] > start_minutes:
         free_intervals.append((start_minutes, merged_intervals[0][0]))
@@ -159,6 +160,7 @@ def get_free_30_min_intervals(my_calender_list, coWorker_calender_list):
 
 free_30_min_intervals = get_free_30_min_intervals(my_calender_list, coWorker_calender_list)
 interval = (free_30_min_intervals)
+print("\n\n")
 print("The possible meeting timings are as follows: ", interval)
 
 
