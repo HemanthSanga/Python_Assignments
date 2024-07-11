@@ -1,22 +1,6 @@
 
 import array
 
-""" discs_array = array.array('i')
-
-
-    # width
-W = input("Enter the width value of the disc: ")
-   
-    # depth
-D = input("Enter the depth value of the disc: ")
-   
-    # height
-H = input("Enter the Height value of the disc: ")
-   
-discs_array.append[[W,D,H]]
-
-print("your unorganized discs set is as follows: ",discs_array) """
-
 # Initializing an empty list to hold the subarrays
 discs_array = []
 
@@ -37,3 +21,10 @@ for i in range(n):
 # Printing the main array to see the result
 print("your unorganized discs set is as follows:\n",discs_array)
 
+
+
+# Sort the main array in descending order based on the subarray values
+sorted_discs_array = sorted(discs_array, key=lambda x: (x[0], x[1], x[2]), reverse=True)
+
+# Print the sorted main array to see the result
+print("The sorted main array in descending order is:\n",sorted_discs_array)
